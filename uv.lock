@@ -818,7 +818,7 @@ requires-dist = [
     { name = "numpy", specifier = ">=2.1.0,<3" },
     { name = "pre-commit", marker = "extra == 'dev'" },
     { name = "pyright", marker = "extra == 'dev'" },
-    { name = "rustymimi", directory = "../rust/mimi-pyo3" },
+    { name = "rustymimi", git = "https://github.com/koodaamo/rustymimi.git" },
     { name = "safetensors", specifier = ">=0.4.0,<1" },
     { name = "sentencepiece", specifier = ">=0.2.2,<0.3" },
     { name = "sounddevice", specifier = ">=0.5,<1" },
@@ -1551,7 +1551,8 @@ wheels = [
 
 [[package]]
 name = "rustymimi"
-source = { directory = "../rust/mimi-pyo3" }
+version = "0.6.4"
+source = { git = "https://github.com/koodaamo/rustymimi.git#0d0b260f73dbad6e2803f1d2944bd7f105c7fae1" }
 
 [[package]]
 name = "safetensors"
