@@ -1,0 +1,41 @@
+[project]
+name = "moshi_mlx"
+version = "0.3.0"
+requires-python = ">= 3.10"
+description = "Moshi is moshi, but running on macOS"
+dependencies = [
+    "numpy >= 2.1.0, < 3",
+    "safetensors >= 0.4.0, < 1",
+    "huggingface-hub >= 0.29, < 1",
+    "rustymimi >= 0.6.4, < 0.7",
+    "sentencepiece >= 0.2.2, < 0.3",
+    "sounddevice >= 0.5, < 1",
+    "sphn >= 0.2.0, < 0.3.0",
+    "mlx >= 0.30.0, < 0.33",
+    "aiohttp >= 3.10.5, < 4",
+]
+authors = [{name="Laurent Mazaré", email="laurent@kyutai.org"}]
+maintainers = [{name="Laurent Mazaré", email="laurent@kyutai.org"}]
+license = {text = "MIT"}
+readme = "README.md"
+
+[project.scripts]
+moshi-local = "moshi_mlx.local:main"
+moshi-local-web = "moshi_mlx.local_web:main"
+
+[build-system]
+requires = ["uv_build >= 0.12.15, < 0.13"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-root = ""
+
+[tool.uv.sources]
+rustymimi = { git = "https://github.com/koodaamo/rustymimi.git" }
+
+[project.optional-dependencies]
+dev = [
+    "pyright",
+    "flake8",
+    "pre-commit",
+]
